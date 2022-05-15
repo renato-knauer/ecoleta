@@ -44,7 +44,7 @@
 
                 <div class="field">
                     <label for="name">Nome da entidade</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" required>
                 </div>
 
                 <!-- ADRESS & ADRESS2 -->
@@ -52,11 +52,11 @@
                 <div class="field-group">
                     <div class="field">
                         <label for="adress">Endereço</label>
-                        <input type="text" name="adress">
+                        <input type="text" name="adress" required>
                     </div>
                     <div class="field">
                         <label for="adress2">Número/Complemento</label>
-                        <input type="text" name="adress2">
+                        <input type="text" name="adress2" required>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                 <div class="field-group">
                     <div class="field">
                         <label for="estate">Estado</label>
-                        <select name="uf">
+                        <select name="uf" required>
                             <option value="">Selecione o Estado</option>
                         </select>
 
@@ -73,7 +73,7 @@
                     </div>
                     <div class="field">
                         <label for="city">Cidade</label>
-                        <select name="city" disabled>
+                        <select name="city" disabled required>
                             <option value="">Selecione a Cidade</option>
                         </select>
                     </div>

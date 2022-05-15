@@ -26,14 +26,19 @@ function getCities(event) {
     estateInput.value = event.target.options[indexOfSelectedEstate].text
     /* Changing url values */
 
-    const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${event.target.value}/municipios`
+    const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
+
+    /* Fixing cities selection */
+    citySelect.innerHTML = '<option value="">Selecione a Cidade</option>'
+    citySelect.disabled = true
+    /* Fixing cities selection */
 
     fetch(url)
     .then( (res) => { return res.json() } )
     .then( cities => {
 
         for(let city of cities) {
-            citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+            citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
         }
 
         citySelect.disabled = false
