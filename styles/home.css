@@ -2,7 +2,7 @@
     height: 100vh;
     background-image: url('../assets/home-background.svg');
     background-repeat: no-repeat;
-    background-position: 35vw 150px;
+    background-position: 35vw bottom;
 }
 
 #page-home .content {
