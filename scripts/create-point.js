@@ -1,4 +1,3 @@
-
 function populateUFs() {
     const ufSelect = document.querySelector('select[name=uf]')
 
@@ -49,3 +48,49 @@ function getCities(event) {
 document
     .querySelector('select[name=uf]')
     .addEventListener('change', getCities)
+
+
+/* WASTE ITEMS */
+
+
+const itemsToCollect = document.querySelectorAll('.items-grid li')
+
+for(let item of itemsToCollect) {
+    item.addEventListener('click', handleSelectedItem)
+}
+
+// Selected items will be put here
+let selectedItems = []
+const collectedItems = document.querySelector('input[name=items]')
+
+function handleSelectedItem(event) {
+    const itemLi = event.target
+    itemLi.classList.toggle('selected')
+    
+    const itemId = itemLi.dataset.id
+
+    // verify if item is already selected
+    // if yes, catch the selected items
+    const alreadySelected = selectedItems.findIndex( item => {
+        const itemFound = item == itemId // true or false
+        return itemFound
+    })
+
+    // if already selected
+    if(alreadySelected >= 0) {
+        // remove from selection
+        const filteredItems = selectedItems.filter( item => {
+            const itemIsDifferent = item != itemId // false
+            return itemIsDifferent
+        })
+
+        selectedItems = filteredItems
+    } else {
+        // if not selected
+        // add it to selection
+        selectedItems.push(itemId)
+    }
+
+    // update the hidden input with the selected items
+    collectedItems.value = selectedItems
+}
