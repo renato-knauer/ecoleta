@@ -30,7 +30,65 @@
         </header>
 
         <form action="">
+            
             <h1>Cadastro do ponto de coleta</h1>
+
+            <!-- ENTITY DETAILS -->
+
+            <fieldset>
+                <legend>
+                    <h2>Dados da entidade</h2>
+                </legend>
+
+                <!-- ENTITY NAME -->
+
+                <div class="field">
+                    <label for="name">Nome da entidade</label>
+                    <input type="text" name="name">
+                </div>
+
+                <!-- ADRESS & ADRESS2 -->
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="adress">Endereço</label>
+                        <input type="text" name="adress">
+                    </div>
+                    <div class="field">
+                        <label for="adress2">Número/Complemento</label>
+                        <input type="text" name="adress2">
+                    </div>
+                </div>
+
+                <!-- ESTATE & CITY -->
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="estate">Estado</label>
+                        <select name="uf">
+                            <option value="">Selecione o Estado</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled>
+                            <option value="">Selecione a Cidade</option>
+                        </select>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <!-- WASTE ITEMS -->
+
+            <fieldset>
+                <legend>
+                    <h2>Ítens de coleta</h2>
+                </legend>
+            </fieldset>
+
+            <button type="submit">Cadastrar ponto de coleta</button>
+
         </form>
 
     </div>
